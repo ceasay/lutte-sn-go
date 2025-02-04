@@ -11,8 +11,8 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o video-streaming
+RUN go build -o lutte-sn
 
 EXPOSE 8080
 
-CMD [ "/build/video-streaming" ]
+CMD [ "/build/lutte-sn" ]
