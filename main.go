@@ -9,6 +9,7 @@ import (
 )
 
 const videoDir = "video"
+const host = "http://localhost:8081"
 const port = 8080
 const videExtenstion = "m3u8"
 
@@ -20,7 +21,7 @@ func main() {
 		fmt.Fprint(w, "<h1>Video Streaming Server</h1>")
 	})
 
-	http.HandleFunc("/videos", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc(host + "/videos", func(w http.ResponseWriter, r *http.Request) {
 		files, err := os.ReadDir("output")
 		if err != nil {
 			log.Fatal(err)
